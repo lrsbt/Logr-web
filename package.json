@@ -12,7 +12,8 @@
   "dependencies": {
     "radix-ui": "^1.4.2",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "solar-icon-react": "^1.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
