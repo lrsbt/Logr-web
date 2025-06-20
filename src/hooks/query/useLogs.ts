@@ -4,9 +4,12 @@ import type { UseQueryResult } from "@tanstack/react-query";
 
 import type { Log } from "@app/types/api";
 import { getHeaders } from "@app/hooks/query";
-import { API_URL, cacheKeys, ONE_MIN, TEN_SEC } from "@app/constants";
+import { API_URL, cacheKeys, TEN_SEC } from "@app/constants";
 
-export async function fetchLogsForProject(projectId: number): Promise<Log[]> {
+export async function fetchLogsForProject(
+  projectId?: Log["id"]
+): Promise<Log[]> {
+  if (!projectId) return [];
   try {
     const headers = getHeaders();
     const url = `${API_URL}/projects/${projectId}`;
@@ -18,7 +21,7 @@ export async function fetchLogsForProject(projectId: number): Promise<Log[]> {
   }
 }
 
-export const useLogs = (projectId: number): UseQueryResult<Log[]> => {
+export const useLogs = (projectId?: Log["id"]): UseQueryResult<Log[]> => {
   return useQuery<Log[], AxiosError>({
     queryKey: cacheKeys.log(projectId),
     queryFn: () => fetchLogsForProject(projectId),

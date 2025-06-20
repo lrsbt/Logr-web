@@ -1,3 +1,5 @@
+import type { Log } from "@app/types/api";
+
 export const cacheKeys = {
-  log: (projectId: number) => ["log", projectId],
+  log: (projectId?: Log["id"]) => ["log", projectId],
 };

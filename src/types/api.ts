@@ -1,5 +1,5 @@
 export interface Log {
-  id: number;
+  id: string;
   project_name?: string;
   project_id?: number;
   channel?: string;
