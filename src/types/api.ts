@@ -6,3 +6,9 @@ export interface Log {
   event: string;
   created_at: string;
 }
+
+export interface Project {
+  id: string;
+  name: string;
+  created_at: string;
+}

@@ -4,5 +4,6 @@ export function getHeaders() {
   return {
     "Content-Type": "application/json",
     Authorization: `bearer ${"woof"}`,
+    // withCredentials: false,
   };
 }

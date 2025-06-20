@@ -1,14 +1,9 @@
 import React from "react";
-
-import { Main, Page, SideBar } from "@app/components";
+import { Page } from "@app/components";
+import { HomeSidebar } from "@app/components/SideBar/HomeSidebar";
 
 const Home = () => {
-  return (
-    <Page>
-      <SideBar />
-      <Main>HOME</Main>
-    </Page>
-  );
+  return <Page sidebar={<HomeSidebar />}></Page>;
 };
 
 export { Home };

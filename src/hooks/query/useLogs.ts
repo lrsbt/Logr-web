@@ -13,7 +13,7 @@ export async function fetchLogsForProject(
   try {
     const headers = getHeaders();
     const url = `${API_URL}/projects/${projectId}`;
-    const response = await axios.get(url, { headers, withCredentials: false });
+    const response = await axios.get(url, { headers });
     return response.data;
   } catch (error) {
     console.warn("fetchProject Error", error);
