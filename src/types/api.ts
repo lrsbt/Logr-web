@@ -12,3 +12,8 @@ export interface Project {
   name: string;
   created_at: string;
 }
+
+export interface Me {
+  id: string;
+  username: string;
+}
