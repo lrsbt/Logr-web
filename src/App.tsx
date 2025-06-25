@@ -5,7 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useAuth } from "./hooks/query";
 
 function App() {
-  const { user, loading, error } = useAuth();
+  const { data } = useAuth();
+
+  console.log(data);
 
   return (
     <BrowserRouter>

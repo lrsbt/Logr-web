@@ -8,6 +8,7 @@
     "skipLibCheck": true,
     "paths": {
       "@app/*": ["./src/*"],
+      "@root/*": ["./*"],
     },
 
     /* Bundler mode */

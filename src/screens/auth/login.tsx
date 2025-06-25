@@ -1,17 +1,19 @@
-import { useState } from "react";
-import { API_URL } from "@app/constants/config";
 import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { API_URL } from "@app/constants/config";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [msg, setMsg] = useState("");
+  const navigate = useNavigate();
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [msg, setMsg] = useState<string>("");
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${API_URL}/login`,
+        `${API_URL}/auth/login`,
         { username, password },
         {
           withCredentials: true,
@@ -19,6 +21,7 @@ const Login = () => {
         }
       );
       setMsg(`Logged in as ${response.data.user.username}`);
+      navigate("/");
     } catch (error: any) {
       if (error.response) {
         setMsg(

@@ -16,4 +16,5 @@ export interface Project {
 export interface Me {
   id: string;
   username: string;
+  api_key: string;
 }
