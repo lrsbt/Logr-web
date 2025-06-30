@@ -1,20 +1,43 @@
 import React from "react";
-import { Home, Project } from "@app/screens";
-import { Login } from "@app/screens/auth";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home, Project, Projects } from "@app/screens";
+import { Login, Logout } from "@app/screens/auth";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useAuth } from "./hooks/query";
 
+const ProtectedRoute = ({ children }) => {
+  const navigate = useNavigate();
+  const { user } = useAuth();
+
+  if (!user) {
+    navigate("/login");
+  }
+
+  return children;
+};
+
 function App() {
-  const { data } = useAuth();
-
-  console.log(data);
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/project/:id" element={<Project />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/projects"
+          element={
+            <ProtectedRoute>
+              <Projects />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/project/:id"
+          element={
+            <ProtectedRoute>
+              <Project />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

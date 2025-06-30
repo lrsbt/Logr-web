@@ -1239,10 +1239,36 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.44.0.tgz#a36e79b6ccece1533f777a1bca1f89c13f0c5f62"
   integrity sha512-Q2Mgwt+D8hd5FIPUuPDsvPR7Bguza6yTkJxspDGkZj7tBRn2y4KSWYuIXpftFSjBra76TbKerCV7rgFPQrn+wQ==
 
+"@tanstack/query-async-storage-persister@^5.81.5":
+  version "5.81.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-async-storage-persister/-/query-async-storage-persister-5.81.5.tgz#9300d94151bf8f79f245deb5b66b5cbd91c2e19a"
+  integrity sha512-5a8t7Q0Dih3Qp80txG88sbNP5nXjqj+djnfVt1xbEuMNRwa6CWVA7fhfdatl3GL5gw8tlBEhPcP0ddnviJjNmw==
+  dependencies:
+    "@tanstack/query-persist-client-core" "5.81.5"
+
 "@tanstack/query-core@5.80.10":
   version "5.80.10"
   resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.80.10.tgz#0de47f63a946662987a467c151808b144211c793"
   integrity sha512-mUNQOtzxkjL6jLbyChZoSBP6A5gQDVRUiPvW+/zw/9ftOAz+H754zCj3D8PwnzPKyHzGkQ9JbH48ukhym9LK1Q==
+
+"@tanstack/query-core@5.81.5":
+  version "5.81.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.81.5.tgz#14e0cc778bad8bc11d1cf130709910d8a353bb73"
+  integrity sha512-ZJOgCy/z2qpZXWaj/oxvodDx07XcQa9BF92c0oINjHkoqUPsmm3uG08HpTaviviZ/N9eP1f9CM7mKSEkIo7O1Q==
+
+"@tanstack/query-persist-client-core@5.81.5":
+  version "5.81.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-persist-client-core/-/query-persist-client-core-5.81.5.tgz#b2a9d02b401e1e3353c3a25f2da6e429122d223e"
+  integrity sha512-imiMWYXf8KuXavOgVRc5IDixqP0VKEN6IxZ/vyuX87Wk0eX7QmRtjLn1AD4Hz7GxYPM3RalRzP5Bshc30hgOcg==
+  dependencies:
+    "@tanstack/query-core" "5.81.5"
+
+"@tanstack/react-query-persist-client@^5.81.5":
+  version "5.81.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query-persist-client/-/react-query-persist-client-5.81.5.tgz#55c0865bf8cd3bfb6a8946e276f975334a034e45"
+  integrity sha512-ZV69n636C22RkbFK0rzel80oWjyWbMKiUwUE2MKhYWTSr42+JmqoehDwJ5sWcO8CxHNm4vWF8pyG+goRzluMYw==
+  dependencies:
+    "@tanstack/query-persist-client-core" "5.81.5"
 
 "@tanstack/react-query@^5.80.10":
   version "5.80.10"

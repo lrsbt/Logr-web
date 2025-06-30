@@ -4,6 +4,7 @@ import { cacheKeys } from "@app/constants/cacheKeys";
 
 import { queryClient } from "@root/main";
 import type { Me } from "@app/types/api";
+import { API_URL } from "@app/constants";
 
 export const getHeaders = () => {
   const data = queryClient.getQueryData(cacheKeys.me) as Me;
@@ -21,7 +22,7 @@ export const useAuth = () => {
     queryKey: cacheKeys.me,
     queryFn: () =>
       axios
-        .get("http://localhost:3000/auth/me", { withCredentials: true })
+        .get(`${API_URL}/auth/me`, { withCredentials: true })
         .then((res) => res.data.user),
     retry: false, // don't retry on failure (e.g. not logged in)
     staleTime: 5 * 60 * 1000, // cache for 5 minutes
@@ -30,7 +31,7 @@ export const useAuth = () => {
   const errorMessage = error?.response?.data?.message || error?.message || null;
 
   return {
-    data,
+    user: data,
     isLoading,
     error,
     errorMessage,
